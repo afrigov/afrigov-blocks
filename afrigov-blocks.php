@@ -57,6 +57,10 @@ add_filter( 'block_categories_all', 'afrigov_blocks_category' );
 function afrigov_blocks_styles() {
 	if ( ! current_theme_supports( 'afrigov' ) ) {
 		wp_enqueue_style( 'afrigov-blocks-core', plugin_dir_url( __FILE__ ) . 'assets/afrigov/core.min.css', array(), AFRIGOV_BLOCKS_VERSION );
+		// The script plays videos when pressed and opens menus; a theme with afrigov loads its own.
+		if ( ! is_admin() ) {
+			wp_enqueue_script( 'afrigov-blocks-script', plugin_dir_url( __FILE__ ) . 'assets/afrigov/afrigov.iife.js', array(), AFRIGOV_BLOCKS_VERSION, true );
+		}
 	}
 	if ( is_admin() ) {
 		wp_enqueue_style( 'afrigov-blocks-editor', plugin_dir_url( __FILE__ ) . 'assets/editor.css', array(), AFRIGOV_BLOCKS_VERSION );
@@ -69,6 +73,7 @@ add_action( 'enqueue_block_assets', 'afrigov_blocks_styles' );
  */
 function afrigov_blocks_editor_styles() {
 	wp_enqueue_style( 'afrigov-blocks-editor', plugin_dir_url( __FILE__ ) . 'assets/editor.css', array(), AFRIGOV_BLOCKS_VERSION );
+	wp_enqueue_script( 'afrigov-blocks-editor', plugin_dir_url( __FILE__ ) . 'assets/editor.js', array( 'wp-blocks', 'wp-data', 'wp-dom-ready', 'wp-editor' ), AFRIGOV_BLOCKS_VERSION, true );
 }
 add_action( 'enqueue_block_editor_assets', 'afrigov_blocks_editor_styles' );
 
@@ -192,3 +197,21 @@ function afrigov_blocks_starter_pages() {
 	}
 }
 add_action( 'init', 'afrigov_blocks_starter_pages' );
+
+/**
+ * The player address for a YouTube or Vimeo page address. YouTube plays from youtube-nocookie.com
+ * and Vimeo with do-not-track. Anything else returns an empty string, and the video is left out.
+ *
+ * @param string $url The address copied from the video's page.
+ * @return string
+ */
+function afrigov_blocks_video_embed( $url ) {
+	$url = trim( (string) $url );
+	if ( preg_match( '~(?:youtu\.be/|youtube(?:-nocookie)?\.com/(?:watch\?(?:.*&)?v=|embed/|shorts/|live/))([A-Za-z0-9_-]{11})~', $url, $m ) ) {
+		return 'https://www.youtube-nocookie.com/embed/' . $m[1];
+	}
+	if ( preg_match( '~vimeo\.com/(?:video/)?(\d+)~', $url, $m ) ) {
+		return 'https://player.vimeo.com/video/' . $m[1] . '?dnt=1';
+	}
+	return '';
+}

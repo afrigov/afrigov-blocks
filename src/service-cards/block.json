@@ -25,7 +25,9 @@
       "enum": [
         "primary",
         "accent",
-        "flag"
+        "flag",
+        "tinted",
+        "plain"
       ],
       "default": "primary"
     },
@@ -40,11 +42,16 @@
     "align": {
       "type": "string",
       "default": "wide"
+    },
+    "horizontal": {
+      "type": "boolean",
+      "default": false
     }
   },
   "providesContext": {
     "afrigov/cardEdge": "edge",
-    "afrigov/cardHeading": "headingLevel"
+    "afrigov/cardHeading": "headingLevel",
+    "afrigov/cardHorizontal": "horizontal"
   },
   "editorScript": "file:./index.js",
   "render": "file:./render.php"

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/inset",
+  "title": "Inset text",
+  "icon": "editor-indent",
+  "description": "A sentence set apart from the text around it: an exception, a note, a condition.",
+  "keywords": [
+    "note",
+    "aside",
+    "callout"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "text": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

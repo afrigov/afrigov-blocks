@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/dated-list",
+  "title": "Dated list",
+  "icon": "list-view",
+  "description": "Notices, press releases or publications with their dates, typed in rather than taken from posts.",
+  "keywords": [
+    "press releases",
+    "notices",
+    "tenders",
+    "updates"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {}
+}

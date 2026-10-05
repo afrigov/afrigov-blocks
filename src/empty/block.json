@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/empty",
+  "title": "Empty state",
+  "icon": "marker",
+  "description": "What to show when a list has nothing in it yet, and where to go instead.",
+  "keywords": [
+    "nothing",
+    "none",
+    "no results",
+    "placeholder"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "text": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

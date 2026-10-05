@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/accordion",
+  "title": "Accordion",
+  "icon": "list-view",
+  "description": "Questions and answers, or sections people open one at a time.",
+  "keywords": [
+    "faq",
+    "questions",
+    "expand",
+    "collapse",
+    "details"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {}
+}

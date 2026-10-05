@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/summary",
+  "title": "Summary list",
+  "icon": "editor-table",
+  "description": "Facts in pairs: a name and its value. Fees, opening hours, contact details.",
+  "keywords": [
+    "key value",
+    "details",
+    "facts",
+    "fees",
+    "contact"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {}
+}

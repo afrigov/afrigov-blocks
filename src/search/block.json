@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/search",
+  "title": "Search box",
+  "icon": "search",
+  "description": "A search box that sends people to the site's search results.",
+  "keywords": [
+    "find",
+    "search form"
+  ],
+  "supports": {
+    "html": false,
+    "multiple": true
+  },
+  "attributes": {
+    "label": {
+      "type": "string",
+      "default": "Search this site"
+    },
+    "large": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

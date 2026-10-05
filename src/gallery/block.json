@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/gallery",
+  "title": "Photo gallery",
+  "icon": "format-gallery",
+  "description": "Photos in a grid, each with a caption that says what is happening.",
+  "keywords": [
+    "photos",
+    "pictures",
+    "album",
+    "images"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide"
+    ]
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "wide"
+    },
+    "images": {
+      "type": "array",
+      "default": []
+    },
+    "columns": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "2",
+        "4"
+      ],
+      "default": "auto"
+    },
+    "linkFull": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/dated-item",
+  "title": "Dated item",
+  "icon": "calendar",
+  "description": "One item: a title that links, its date, and a short line.",
+  "parent": [
+    "afrigov/dated-list"
+  ],
+  "supports": {
+    "html": false,
+    "reusable": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "url": {
+      "type": "string",
+      "default": ""
+    },
+    "date": {
+      "type": "string",
+      "default": ""
+    },
+    "tag": {
+      "type": "string",
+      "default": ""
+    },
+    "text": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

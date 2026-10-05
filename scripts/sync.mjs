@@ -7,4 +7,5 @@ const require = createRequire(import.meta.url);
 const dist = join(dirname(require.resolve("afrigov/package.json")), "dist");
 mkdirSync("assets/afrigov", { recursive: true });
 cpSync(join(dist, "core.min.css"), "assets/afrigov/core.min.css");
-console.log("assets/afrigov/core.min.css copied from afrigov", require("afrigov/package.json").version);
+cpSync(join(dist, "afrigov.iife.js"), "assets/afrigov/afrigov.iife.js");
+console.log("assets/afrigov/core.min.css and afrigov.iife.js copied from afrigov", require("afrigov/package.json").version);

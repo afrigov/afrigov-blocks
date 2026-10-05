@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/panel",
+  "title": "Panel",
+  "icon": "yes-alt",
+  "description": "A done message in a coloured box: the end of a form, with a reference number.",
+  "keywords": [
+    "confirmation",
+    "done",
+    "success",
+    "reference"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "body": {
+      "type": "string",
+      "default": ""
+    },
+    "reference": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

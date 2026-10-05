@@ -4,6 +4,7 @@ import { PanelBody, SelectControl, ToggleControl } from "@wordpress/components";
 import { LayoutPicker, PICTURES } from "../shared/layout-picker";
 import { LinkField, NoLink } from "../shared/link-field";
 import { MediaField } from "../shared/media-field";
+import { VariantMenu } from "../shared/variant-menu";
 
 const LAYOUTS = [
   { value: "text", label: __("Text", "afrigov-blocks"), picture: PICTURES.text },
@@ -86,6 +87,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 
   return (
     <>
+      <VariantMenu label={__("Layout", "afrigov-blocks")} icon="layout" value={layout} options={LAYOUTS} onChange={set("layout")} />
       <InspectorControls>
         <PanelBody title={__("Look", "afrigov-blocks")}>
           <LayoutPicker label={__("Layout", "afrigov-blocks")} value={layout} options={LAYOUTS} onChange={set("layout")} />

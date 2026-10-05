@@ -2,28 +2,54 @@
 
 afrigov's components as WordPress blocks. Each block is a fixed shape you fill in on the page: you type the title onto the hero, and the service cards have an Add card button. Nothing can be dropped inside a block that does not belong there, and the editor looks like the published page.
 
-Status: version 0.1.0, twelve blocks, in development. It is not in the WordPress plugin directory yet.
+Status: version 0.1.0, 24 blocks, in development. It is not in the WordPress plugin directory yet.
 
 ## The blocks
 
 Each block is listed under **afrigov** when you press **+** in the editor. Repeating parts have an Add button under them, and only the right kind of item can go inside.
 
-| Block | What you fill in on the page | Choices in the sidebar |
+| Block | What you fill in on the page | Variants and choices |
 | --- | --- | --- |
-| Hero | Title, a sentence, one or two buttons, a line under them | Layout, chosen from pictures: text, picture beside, picture first, centred, over a photo. Coloured panel, tall, and for a photo the panel's colour and where it sits |
-| Service cards | Cards, with **Add card** | The edge along the top: main colour, accent, the flag. Heading level |
+| Hero | Title, a sentence, one or two buttons, a line under them | Layout: text, picture beside, picture first, centred, over a photo. Coloured panel, tall. For a photo, the panel's colour and where it sits |
+| Service cards | Cards, with **Add card**. Each can have a photo or a logo, and a small line | Style: main colour, accent, flag, tinted, plain. Picture beside the text |
 | Steps | Numbered steps, with **Add step** | Heading level |
-| Key figures | Figures and what they count, with **Add figure**, and the date they are true for | |
-| People | Name and role, with **Add person** | Portraits, links, and the layout: as many as fit, 2 or 3 centred, 4 or 6 a row, or rows |
-| Events | Title, when and where, a sentence, with **Add event** | The date and time, or "to be confirmed". An event is marked past by itself once its date has gone |
-| Alert | Title and what to do | Information, success, warning or problem |
-| Downloads | Documents, with **Add document** | The file, from the media library. Its type and size are worked out from the file |
-| Statement | Title, the message, the name and role, a link | Portrait |
-| Latest news | Nothing: it shows the newest posts and updates itself | How many, which category, a line from each |
-| Band | Anything: a section across the page | Pale tint, main colour, dark, accent |
-| Feature | Title, a sentence, points with **Add point**, a link | Picture, and whether it goes after the text |
+| Key figures | Figures, with **Add figure**, and the date they are true for | |
+| People | Name and role, with **Add person** | Layout: as many as fit, 2 or 3 centred, 4 or 6 a row, rows |
+| Events | Title, when and where, with **Add event** | Date and time, or to be confirmed. Marked past by itself |
+| Alert | Title and what to do | Kind: information, success, warning, problem |
+| Downloads | Documents, with **Add document** | The file; its type and size are worked out |
+| Statement | A leader's message, name, role, link | Portrait |
+| Latest news | Nothing: it shows the newest posts | How many, which category, a line from each |
+| Band | Anything: a section across the page | Colour: pale tint, main colour, dark, accent |
+| Feature | Title, a sentence, points with **Add point**, a link | Picture first or after the text |
+| Accordion | Questions and answers, with **Add section** | |
+| Inset text | A sentence set apart | |
+| Summary list | Names and values, with **Add row** | |
+| Video | Title, length, a line under it, the transcript | YouTube or Vimeo address, still. Loads only when pressed, with no tracking |
+| Video cards | Videos, with **Add video** | Still, length, link |
+| Photo gallery | A caption under each photo | Layout: three a row, two larger, four smaller. Open full size |
+| Dated list | Notices or press releases, with **Add item** | Date, link, kind |
+| Empty state | What is missing, where to look, a button | |
+| Panel | A done message and a reference number | |
+| Back link | Its words | Where it goes |
+| Search box | Its label | Large |
+| Social links | Nothing on the page | The accounts' addresses |
 
 Links sit just under what they belong to while a block is selected. Something with words but no link says so in the editor.
+
+## Using variants
+
+Click a block. The toolbar above it shows its main choice and what is chosen now, such as **Layout: Over a photo** or **Style: Tinted**. Click it to pick another. The page changes at once.
+
+The main variants are also in the **+** menu as their own items: **Hero over a photo**, **Hero with a picture**, **Alert: warning**, **Band: main colour** and so on.
+
+Every other choice is in the settings sidebar, opened with the gear at the top right, on the **Block** tab.
+
+## Pages and posts
+
+On pages, the + menu holds these blocks and the basic writing blocks: paragraph, heading, list, quote, image, table, details, separator, buttons, shortcode, and YouTube and Vimeo embeds. Groups, columns and covers are left out, since they break the look. Posts keep every block.
+
+A new page offers three starter pages: Service, About and Home.
 
 ## How it is built
 

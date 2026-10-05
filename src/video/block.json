@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/video",
+  "title": "Video",
+  "icon": "video-alt3",
+  "description": "A YouTube or Vimeo video that loads only when pressed, with its length and a transcript.",
+  "keywords": [
+    "youtube",
+    "vimeo",
+    "film",
+    "clip"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "url": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "length": {
+      "type": "string",
+      "default": ""
+    },
+    "poster": {
+      "type": "object"
+    },
+    "caption": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

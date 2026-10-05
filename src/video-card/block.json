@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/video-card",
+  "title": "Video card",
+  "icon": "video-alt2",
+  "description": "One video: its still, length and title, linking to its page.",
+  "parent": [
+    "afrigov/video-cards"
+  ],
+  "supports": {
+    "html": false,
+    "reusable": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "url": {
+      "type": "string",
+      "default": ""
+    },
+    "duration": {
+      "type": "string",
+      "default": ""
+    },
+    "meta": {
+      "type": "string",
+      "default": ""
+    },
+    "poster": {
+      "type": "object"
+    }
+  }
+}

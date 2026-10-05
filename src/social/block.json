@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/social",
+  "title": "Social links",
+  "icon": "share",
+  "description": "Links to the organisation's accounts, each with its icon and name.",
+  "keywords": [
+    "facebook",
+    "twitter",
+    "x",
+    "instagram",
+    "youtube",
+    "linkedin",
+    "whatsapp",
+    "follow"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "links": {
+      "type": "object",
+      "default": {}
+    }
+  }
+}

@@ -6,14 +6,47 @@
   "category": "afrigov",
   "icon": "index-card",
   "description": "One card: a title that links somewhere, and a sentence about it.",
-  "parent": ["afrigov/service-cards"],
+  "parent": [
+    "afrigov/service-cards"
+  ],
   "textdomain": "afrigov-blocks",
-  "supports": { "html": false, "reusable": false },
-  "usesContext": ["afrigov/cardEdge", "afrigov/cardHeading"],
+  "supports": {
+    "html": false,
+    "reusable": false
+  },
+  "usesContext": [
+    "afrigov/cardEdge",
+    "afrigov/cardHeading",
+    "afrigov/cardHorizontal"
+  ],
   "attributes": {
-    "title": { "type": "string", "default": "" },
-    "text": { "type": "string", "default": "" },
-    "url": { "type": "string", "default": "" }
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "text": {
+      "type": "string",
+      "default": ""
+    },
+    "url": {
+      "type": "string",
+      "default": ""
+    },
+    "image": {
+      "type": "object"
+    },
+    "imageKind": {
+      "type": "string",
+      "enum": [
+        "photo",
+        "logo"
+      ],
+      "default": "photo"
+    },
+    "meta": {
+      "type": "string",
+      "default": ""
+    }
   },
   "editorScript": "file:./index.js",
   "render": "file:./render.php"

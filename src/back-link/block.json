@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/back-link",
+  "title": "Back link",
+  "icon": "arrow-left-alt",
+  "description": "A link back to the page before, at the top of a page in a series.",
+  "keywords": [
+    "back",
+    "previous",
+    "return"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "label": {
+      "type": "string",
+      "default": "Back"
+    },
+    "url": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

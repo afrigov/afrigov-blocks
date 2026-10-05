@@ -3,6 +3,7 @@ import { InspectorControls, RichText, useBlockProps } from "@wordpress/block-edi
 import { Button, PanelBody, ToggleControl } from "@wordpress/components";
 import { LinkField, NoLink } from "../shared/link-field";
 import { MediaField } from "../shared/media-field";
+import { VariantMenu } from "../shared/variant-menu";
 
 export default function Edit({ attributes, setAttributes, isSelected }) {
   const { image, title, text, points, linkLabel, linkUrl, reverse } = attributes;
@@ -11,6 +12,13 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
   const blockProps = useBlockProps({ className: ["ag-feature", reverse && "ag-feature--reverse"].filter(Boolean).join(" ") });
   return (
     <>
+      <VariantMenu
+        label={__("Picture", "afrigov-blocks")}
+        icon="align-pull-left"
+        value={reverse ? "after" : "before"}
+        options={[{ value: "before", label: __("First", "afrigov-blocks") }, { value: "after", label: __("After the text", "afrigov-blocks") }]}
+        onChange={(v) => setAttributes({ reverse: v === "after" })}
+      />
       <InspectorControls>
         <PanelBody title={__("Picture", "afrigov-blocks")}>
           <MediaField label={__("Picture", "afrigov-blocks")} help={__("Under 80 KB. Describe it in the media library if it shows something the text does not say.", "afrigov-blocks")} image={image} onChange={set("image")} />
