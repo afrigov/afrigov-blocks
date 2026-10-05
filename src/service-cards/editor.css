@@ -1,0 +1,17 @@
+/* Editor only: the Add card button sits under the cards, clear of them. */
+.afrigov-blocks-cards > .afrigov-blocks-add {
+  margin-top: 0.5rem;
+}
+
+/* A card's link field, shown while the card is selected. */
+.afrigov-blocks-link {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* A card with a title but no link yet. */
+.afrigov-blocks-warning {
+  margin: 0;
+  color: #b00020;
+  font-size: 0.875rem;
+}

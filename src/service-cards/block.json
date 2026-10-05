@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "afrigov/service-cards",
+  "title": "Service cards",
+  "category": "afrigov",
+  "icon": "grid-view",
+  "description": "A row of cards, each linking to a service or a page. Add as many as you need.",
+  "keywords": ["cards", "services", "links", "grid"],
+  "textdomain": "afrigov-blocks",
+  "supports": { "html": false },
+  "attributes": {
+    "edge": { "type": "string", "enum": ["primary", "accent", "flag"], "default": "primary" },
+    "headingLevel": { "type": "number", "enum": [2, 3], "default": 3 }
+  },
+  "providesContext": {
+    "afrigov/cardEdge": "edge",
+    "afrigov/cardHeading": "headingLevel"
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "render": "file:./render.php"
+}

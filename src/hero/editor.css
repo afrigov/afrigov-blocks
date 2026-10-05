@@ -1,0 +1,5 @@
+/* Editor only. An empty optional button is drawn faintly, so it reads as a place to type, not a button. */
+.afrigov-blocks-optional:has(> [data-rich-text-placeholder]) {
+  opacity: 0.55;
+  border-style: dashed;
+}

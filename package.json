@@ -1,0 +1,16 @@
+{
+  "name": "afrigov-blocks",
+  "version": "0.1.0",
+  "private": true,
+  "description": "afrigov's components as WordPress blocks: each a fixed shape you fill in on the page.",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "build": "wp-scripts build --webpack-copy-php && node scripts/sync.mjs",
+    "start": "wp-scripts start --webpack-copy-php",
+    "sync": "node scripts/sync.mjs"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^31.0.0",
+    "afrigov": "0.15.0"
+  }
+}

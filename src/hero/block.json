@@ -1,0 +1,81 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "afrigov/hero",
+  "title": "Hero",
+  "category": "afrigov",
+  "icon": "cover-image",
+  "description": "The top of a page: a title, a sentence under it, and one or two buttons.",
+  "keywords": [
+    "banner",
+    "header",
+    "intro",
+    "top"
+  ],
+  "textdomain": "afrigov-blocks",
+  "supports": {
+    "html": false,
+    "multiple": false,
+    "reusable": false,
+    "align": [
+      "full"
+    ]
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "lead": {
+      "type": "string",
+      "default": ""
+    },
+    "primaryLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "primaryUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "secondaryLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "secondaryUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "colour": {
+      "type": "string",
+      "enum": [
+        "plain",
+        "primary"
+      ],
+      "default": "primary"
+    },
+    "tall": {
+      "type": "boolean",
+      "default": false
+    },
+    "isPageTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
+  },
+  "example": {
+    "attributes": {
+      "title": "Renew a passport online",
+      "lead": "Apply, pay, and collect from the office you choose. It takes about 10 minutes.",
+      "primaryLabel": "Start now",
+      "primaryUrl": "#"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "render": "file:./render.php"
+}
