@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/news",
+  "title": "Latest news",
+  "icon": "megaphone",
+  "description": "The newest posts, as a dated list. It updates itself when you publish.",
+  "keywords": [
+    "posts",
+    "press releases",
+    "updates",
+    "blog"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "count": {
+      "type": "number",
+      "default": 5
+    },
+    "category": {
+      "type": "number",
+      "default": 0
+    },
+    "excerpts": {
+      "type": "boolean",
+      "default": false
+    },
+    "allLabel": {
+      "type": "string",
+      "default": "All news"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/download",
+  "title": "Document",
+  "icon": "media-document",
+  "description": "One document from the media library.",
+  "parent": [
+    "afrigov/downloads"
+  ],
+  "supports": {
+    "html": false,
+    "reusable": false
+  },
+  "attributes": {
+    "file": {
+      "type": "object"
+    },
+    "label": {
+      "type": "string",
+      "default": ""
+    },
+    "note": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

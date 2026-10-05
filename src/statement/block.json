@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/statement",
+  "title": "Statement",
+  "icon": "format-quote",
+  "description": "A message from the head of the organisation: a portrait, a title, the message and who it is from.",
+  "keywords": [
+    "message",
+    "welcome",
+    "minister",
+    "director",
+    "quote"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "name": {
+      "type": "string",
+      "default": ""
+    },
+    "role": {
+      "type": "string",
+      "default": ""
+    },
+    "photo": {
+      "type": "object"
+    },
+    "linkLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "linkUrl": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

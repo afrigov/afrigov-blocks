@@ -1,0 +1,103 @@
+/* Shared editor-only styles. Loaded with the Hero block, which every editor registers. */
+.afrigov-blocks-link {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.afrigov-blocks-warning {
+  margin: 0.25rem 0 0;
+  color: #b00020;
+  font-size: 0.875rem;
+}
+
+.afrigov-blocks-add {
+  margin-top: 0.5rem;
+}
+
+.afrigov-blocks-media img {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.afrigov-blocks-media__label {
+  margin: 0 0 0.25rem;
+  font-weight: 600;
+}
+
+.afrigov-blocks-media__help {
+  margin: 0.25rem 0 0.5rem;
+  color: #757575;
+  font-size: 12px;
+}
+
+.afrigov-blocks-picker {
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+}
+
+.afrigov-blocks-picker__legend {
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.afrigov-blocks-picker__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.afrigov-blocks-picker .afrigov-blocks-picker__option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  height: auto;
+  padding: 6px;
+  border: 1px solid #ddd;
+  font-size: 12px;
+  text-align: left;
+}
+
+.afrigov-blocks-picker .afrigov-blocks-picker__option.is-pressed {
+  border-color: var(--wp-admin-theme-color, #3858e9);
+  box-shadow: 0 0 0 1px var(--wp-admin-theme-color, #3858e9);
+}
+
+/* An empty optional field is drawn faintly, so it reads as a place to type. */
+.afrigov-blocks-optional:has(> [data-rich-text-placeholder]) {
+  opacity: 0.55;
+  border-style: dashed;
+}
+
+/* Where a picture will go, before one is chosen. */
+.afrigov-blocks-empty-picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 10rem;
+  padding: 1rem;
+  border: 2px dashed #9fb3c8;
+  background: #f2f5f8;
+  color: #3c4b5a;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.ag-hero--cover .afrigov-blocks-empty-picture {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+}
+
+/* The link fields under a block's buttons, on a white card so they read on any background. */
+.afrigov-blocks-fields {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  background: #fff;
+  color: #1b1b1b;
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/event",
+  "title": "Event",
+  "icon": "calendar",
+  "description": "One event: its date, title, where and when, and a sentence.",
+  "parent": [
+    "afrigov/events"
+  ],
+  "supports": {
+    "html": false,
+    "reusable": false
+  },
+  "usesContext": [
+    "afrigov/eventHeading"
+  ],
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "url": {
+      "type": "string",
+      "default": ""
+    },
+    "date": {
+      "type": "string",
+      "default": ""
+    },
+    "time": {
+      "type": "string",
+      "default": ""
+    },
+    "tbc": {
+      "type": "boolean",
+      "default": false
+    },
+    "meta": {
+      "type": "string",
+      "default": ""
+    },
+    "text": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

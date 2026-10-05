@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/person",
+  "title": "Person",
+  "icon": "admin-users",
+  "description": "A portrait, a name and a role.",
+  "parent": [
+    "afrigov/people"
+  ],
+  "supports": {
+    "html": false,
+    "reusable": false
+  },
+  "usesContext": [
+    "afrigov/personHeading"
+  ],
+  "attributes": {
+    "name": {
+      "type": "string",
+      "default": ""
+    },
+    "role": {
+      "type": "string",
+      "default": ""
+    },
+    "url": {
+      "type": "string",
+      "default": ""
+    },
+    "photo": {
+      "type": "object"
+    }
+  }
+}

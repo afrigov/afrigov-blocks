@@ -1,0 +1,60 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/feature",
+  "title": "Feature",
+  "icon": "align-pull-left",
+  "description": "One thing given more room: a picture beside a title, a sentence, a few points and a link.",
+  "keywords": [
+    "highlight",
+    "spotlight",
+    "image and text",
+    "media"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide"
+    ]
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "wide"
+    },
+    "image": {
+      "type": "object"
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "text": {
+      "type": "string",
+      "default": ""
+    },
+    "points": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "string"
+      }
+    },
+    "linkLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "linkUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "reverse": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

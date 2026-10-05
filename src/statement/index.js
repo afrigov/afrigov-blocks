@@ -3,5 +3,5 @@ import { InnerBlocks } from "@wordpress/block-editor";
 import metadata from "./block.json";
 import Edit from "./edit";
 
-// The cards are saved as the list's children; render.php wraps them in the list.
+// The blocks inside are saved; render.php wraps them.
 registerBlockType(metadata.name, { edit: Edit, save: () => <InnerBlocks.Content /> });

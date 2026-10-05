@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/downloads",
+  "title": "Downloads",
+  "icon": "download",
+  "description": "Documents to download, each with its type and size worked out from the file.",
+  "keywords": [
+    "documents",
+    "files",
+    "pdf",
+    "publications",
+    "resources"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {}
+}

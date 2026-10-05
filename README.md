@@ -2,15 +2,28 @@
 
 afrigov's components as WordPress blocks. Each block is a fixed shape you fill in on the page: you type the title onto the hero, and the service cards have an Add card button. Nothing can be dropped inside a block that does not belong there, and the editor looks like the published page.
 
-Status: a proof, version 0.1.0, with three blocks. It is not published.
+Status: version 0.1.0, twelve blocks, in development. It is not in the WordPress plugin directory yet.
 
 ## The blocks
 
-| Block | What you fill in | In the sidebar |
+Each block is listed under **afrigov** when you press **+** in the editor. Repeating parts have an Add button under them, and only the right kind of item can go inside.
+
+| Block | What you fill in on the page | Choices in the sidebar |
 | --- | --- | --- |
-| Hero | Title, a sentence under it, one or two button labels | Coloured panel, tall, whether the title is the page's main heading, where the buttons go |
-| Service cards | Nothing: it holds cards, with an Add card button underneath | The edge along the top of each card (main colour, accent, the flag), and the cards' heading level |
-| Service card | Title and a sentence. Where it links is shown under the card while it is selected | The link |
+| Hero | Title, a sentence, one or two buttons, a line under them | Layout, chosen from pictures: text, picture beside, picture first, centred, over a photo. Coloured panel, tall, and for a photo the panel's colour and where it sits |
+| Service cards | Cards, with **Add card** | The edge along the top: main colour, accent, the flag. Heading level |
+| Steps | Numbered steps, with **Add step** | Heading level |
+| Key figures | Figures and what they count, with **Add figure**, and the date they are true for | |
+| People | Name and role, with **Add person** | Portraits, links, and the layout: as many as fit, 2 or 3 centred, 4 or 6 a row, or rows |
+| Events | Title, when and where, a sentence, with **Add event** | The date and time, or "to be confirmed". An event is marked past by itself once its date has gone |
+| Alert | Title and what to do | Information, success, warning or problem |
+| Downloads | Documents, with **Add document** | The file, from the media library. Its type and size are worked out from the file |
+| Statement | Title, the message, the name and role, a link | Portrait |
+| Latest news | Nothing: it shows the newest posts and updates itself | How many, which category, a line from each |
+| Band | Anything: a section across the page | Pale tint, main colour, dark, accent |
+| Feature | Title, a sentence, points with **Add point**, a link | Picture, and whether it goes after the text |
+
+Links sit just under what they belong to while a block is selected. Something with words but no link says so in the editor.
 
 ## How it is built
 
@@ -28,7 +41,7 @@ npm install && npm run build      # here, in afrigov-blocks
 cd ../afrigovPress && npm start   # WordPress at http://localhost:8888, admin / password
 ```
 
-Open Pages, Add New, press the + at the top left, and look under afrigov. The page "Blocks proof" is built from the three blocks.
+Open Pages, Add New, press the + at the top left, and look under afrigov. The page "All blocks" uses every one.
 
 ## Licence
 

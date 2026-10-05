@@ -5,67 +5,26 @@
   "title": "Hero",
   "category": "afrigov",
   "icon": "cover-image",
-  "description": "The top of a page: a title, a sentence under it, and one or two buttons.",
-  "keywords": [
-    "banner",
-    "header",
-    "intro",
-    "top"
-  ],
+  "description": "The top of a page: a title, a sentence under it, one or two buttons, and a picture if you want one.",
+  "keywords": ["banner", "header", "intro", "top", "cover"],
   "textdomain": "afrigov-blocks",
-  "supports": {
-    "html": false,
-    "multiple": false,
-    "reusable": false,
-    "align": [
-      "full"
-    ]
-  },
+  "supports": { "html": false, "multiple": false, "reusable": false, "align": ["full"] },
   "attributes": {
-    "title": {
-      "type": "string",
-      "default": ""
-    },
-    "lead": {
-      "type": "string",
-      "default": ""
-    },
-    "primaryLabel": {
-      "type": "string",
-      "default": ""
-    },
-    "primaryUrl": {
-      "type": "string",
-      "default": ""
-    },
-    "secondaryLabel": {
-      "type": "string",
-      "default": ""
-    },
-    "secondaryUrl": {
-      "type": "string",
-      "default": ""
-    },
-    "colour": {
-      "type": "string",
-      "enum": [
-        "plain",
-        "primary"
-      ],
-      "default": "primary"
-    },
-    "tall": {
-      "type": "boolean",
-      "default": false
-    },
-    "isPageTitle": {
-      "type": "boolean",
-      "default": true
-    },
-    "align": {
-      "type": "string",
-      "default": "full"
-    }
+    "align": { "type": "string", "default": "full" },
+    "layout": { "type": "string", "enum": ["text", "image", "image-first", "centred", "cover"], "default": "text" },
+    "colour": { "type": "string", "enum": ["plain", "primary"], "default": "primary" },
+    "panel": { "type": "string", "enum": ["dark", "light"], "default": "dark" },
+    "position": { "type": "string", "enum": ["start", "end", "top"], "default": "start" },
+    "tall": { "type": "boolean", "default": false },
+    "isPageTitle": { "type": "boolean", "default": true },
+    "title": { "type": "string", "default": "" },
+    "lead": { "type": "string", "default": "" },
+    "primaryLabel": { "type": "string", "default": "" },
+    "primaryUrl": { "type": "string", "default": "" },
+    "secondaryLabel": { "type": "string", "default": "" },
+    "secondaryUrl": { "type": "string", "default": "" },
+    "note": { "type": "string", "default": "" },
+    "image": { "type": "object" }
   },
   "example": {
     "attributes": {
@@ -76,6 +35,5 @@
     }
   },
   "editorScript": "file:./index.js",
-  "editorStyle": "file:./index.css",
   "render": "file:./render.php"
 }

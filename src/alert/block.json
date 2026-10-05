@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/alert",
+  "title": "Alert",
+  "icon": "warning",
+  "description": "A message that needs attention: information, success, a warning or a problem.",
+  "keywords": [
+    "notice",
+    "warning",
+    "message",
+    "banner"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "kind": {
+      "type": "string",
+      "enum": [
+        "info",
+        "success",
+        "warning",
+        "error"
+      ],
+      "default": "info"
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "text": {
+      "type": "string",
+      "default": ""
+    },
+    "headingLevel": {
+      "type": "number",
+      "default": 2
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/key-figures",
+  "title": "Key figures",
+  "icon": "chart-bar",
+  "description": "A few numbers that matter, each with what it counts, and the date they are true for.",
+  "keywords": [
+    "stats",
+    "numbers",
+    "figures"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "asAt": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

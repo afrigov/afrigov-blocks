@@ -1,0 +1,42 @@
+name: CI
+
+# Builds the blocks and checks every PHP file's syntax on the oldest and newest PHP the plugin supports.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm run build
+      - name: Every block has its files
+        run: |
+          for dir in build/*/; do
+            for f in block.json index.js render.php; do
+              test -f "$dir$f" || { echo "missing $dir$f"; exit 1; }
+            done
+          done
+          echo "$(ls -d build/*/ | wc -l) blocks"
+
+  php:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ["8.0", "8.3"]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+      - name: PHP syntax
+        run: find . -name "*.php" -not -path "./node_modules/*" -print0 | xargs -0 -n1 php -l

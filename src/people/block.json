@@ -1,0 +1,50 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/people",
+  "title": "People",
+  "icon": "groups",
+  "description": "Leaders or a team: a portrait, a name and a role for each person.",
+  "keywords": [
+    "team",
+    "leaders",
+    "management",
+    "board",
+    "staff"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide"
+    ]
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "wide"
+    },
+    "columns": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "2",
+        "3",
+        "4",
+        "6",
+        "rows"
+      ],
+      "default": "auto"
+    },
+    "headingLevel": {
+      "type": "number",
+      "default": 3
+    }
+  },
+  "providesContext": {
+    "afrigov/personHeading": "headingLevel"
+  }
+}

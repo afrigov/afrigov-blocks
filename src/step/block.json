@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/step",
+  "title": "Step",
+  "icon": "editor-ol",
+  "description": "One step: a short title and what happens.",
+  "parent": [
+    "afrigov/steps"
+  ],
+  "supports": {
+    "html": false,
+    "reusable": false
+  },
+  "usesContext": [
+    "afrigov/stepHeading"
+  ],
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "text": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}
