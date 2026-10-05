@@ -121,3 +121,74 @@ function afrigov_blocks_size( $bytes ) {
 	}
 	return number_format_i18n( max( 1, round( $bytes / 1024 ) ) ) . ' KB';
 }
+
+/**
+ * On pages, the block list holds afrigov's blocks and the basic blocks for writing, so there is
+ * little to choose from and nothing that breaks the look. Posts keep every block: articles are
+ * mostly text. Blocks already on a page keep working; they just cannot be added again.
+ *
+ * Turn it off with:  add_filter( 'afrigov_blocks_limit_pages', '__return_false' );
+ * Change the basic blocks with the afrigov_blocks_page_core_blocks filter.
+ *
+ * @param bool|string[]           $allowed Allowed block types.
+ * @param WP_Block_Editor_Context $context Where the editor is.
+ * @return bool|string[]
+ */
+function afrigov_blocks_page_blocks( $allowed, $context ) {
+	if ( empty( $context->post ) || 'page' !== $context->post->post_type || ! apply_filters( 'afrigov_blocks_limit_pages', true ) ) {
+		return $allowed;
+	}
+	$core   = apply_filters(
+		'afrigov_blocks_page_core_blocks',
+		array(
+			'core/paragraph',
+			'core/heading',
+			'core/list',
+			'core/list-item',
+			'core/quote',
+			'core/image',
+			'core/table',
+			'core/details',
+			'core/separator',
+			'core/buttons',
+			'core/button',
+			'core/embed',
+			'core/shortcode',
+			'core/block',
+		)
+	);
+	$ours   = array_filter( array_keys( WP_Block_Type_Registry::get_instance()->get_all_registered() ), fn( $name ) => str_starts_with( $name, 'afrigov/' ) );
+	return array_values( array_merge( $ours, $core ) );
+}
+add_filter( 'allowed_block_types_all', 'afrigov_blocks_page_blocks', 10, 2 );
+
+/**
+ * Starter pages. They are offered when someone creates a new page, already laid out with the
+ * right blocks and example words to replace.
+ */
+function afrigov_blocks_starter_pages() {
+	register_block_pattern_category( 'afrigov-pages', array( 'label' => __( 'afrigov: starter pages', 'afrigov-blocks' ) ) );
+	$pages = array(
+		'service' => array( __( 'Service page', 'afrigov-blocks' ), __( 'What the service is, who can use it, how it works, what to bring, and a Start button.', 'afrigov-blocks' ) ),
+		'about'   => array( __( 'About page', 'afrigov-blocks' ), __( 'What the organisation does, in numbers, its leaders and a message from its head.', 'afrigov-blocks' ) ),
+		'home'    => array( __( 'Home page', 'afrigov-blocks' ), __( 'A hero, the main services, key figures, events, the latest news and a feature.', 'afrigov-blocks' ) ),
+	);
+	foreach ( $pages as $slug => $page ) {
+		$file = __DIR__ . '/patterns/' . $slug . '.html';
+		if ( ! is_readable( $file ) ) {
+			continue;
+		}
+		register_block_pattern(
+			'afrigov-blocks/page-' . $slug,
+			array(
+				'title'       => $page[0],
+				'description' => $page[1],
+				'categories'  => array( 'afrigov-pages' ),
+				'blockTypes'  => array( 'core/post-content' ),
+				'postTypes'   => array( 'page' ),
+				'content'     => file_get_contents( $file ), // phpcs:ignore WordPress.WP.AlternativeFunctions -- a local file in the plugin
+			)
+		);
+	}
+}
+add_action( 'init', 'afrigov_blocks_starter_pages' );
