@@ -8,14 +8,14 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$afrigov_id = (int) ( $attributes['file']['id'] ?? 0 );
-$afrigov_url = $afrigov_id ? wp_get_attachment_url( $afrigov_id ) : '';
+$afrigov_id    = (int) ( $attributes['file']['id'] ?? 0 );
+$afrigov_url   = $afrigov_id ? wp_get_attachment_url( $afrigov_id ) : trim( $attributes['url'] ?? '' );
+$afrigov_label = trim( wp_strip_all_tags( $attributes['label'] ?? '' ) );
 if ( ! $afrigov_url ) {
 	return;
 }
-$afrigov_label = trim( wp_strip_all_tags( $attributes['label'] ?? '' ) );
 if ( '' === $afrigov_label ) {
-	$afrigov_label = get_the_title( $afrigov_id );
+	$afrigov_label = $afrigov_id ? get_the_title( $afrigov_id ) : basename( wp_parse_url( $afrigov_url, PHP_URL_PATH ) );
 }
 
 // The type in words people know, and the size, so they can tell how long it will take on a phone.
@@ -33,8 +33,13 @@ $afrigov_types = array(
 );
 $afrigov_ext  = strtolower( pathinfo( wp_parse_url( $afrigov_url, PHP_URL_PATH ), PATHINFO_EXTENSION ) );
 $afrigov_type = $afrigov_types[ $afrigov_ext ] ?? strtoupper( $afrigov_ext );
-$afrigov_path = get_attached_file( $afrigov_id );
+$afrigov_path = $afrigov_id ? get_attached_file( $afrigov_id ) : '';
 $afrigov_size = ( $afrigov_path && file_exists( $afrigov_path ) ) ? afrigov_blocks_size( filesize( $afrigov_path ) ) : '';
+// A document kept elsewhere: its type and size as typed in, since they cannot be read here.
+if ( ! $afrigov_id ) {
+	$afrigov_type = trim( $attributes['fileType'] ?? '' ) ? trim( $attributes['fileType'] ) : $afrigov_type;
+	$afrigov_size = trim( $attributes['fileSize'] ?? '' );
+}
 $afrigov_meta = implode( ', ', array_filter( array( $afrigov_type, $afrigov_size ) ) );
 ?>
 <li class="ag-list__item">

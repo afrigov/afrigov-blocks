@@ -15,7 +15,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
   );
   const fields = (
     <>
-      <TextControl label={__("YouTube or Vimeo address", "afrigov-blocks")} help={__("Copy it from the video's page.", "afrigov-blocks")} value={url} onChange={set("url")} __nextHasNoMarginBottom />
+      <TextControl label={__("YouTube or Vimeo address, or a video file", "afrigov-blocks")} help={__("Copy it from the video's page, or paste the address of an MP4 file.", "afrigov-blocks")} value={url} onChange={set("url")} __nextHasNoMarginBottom />
       <TextControl label={__("Length", "afrigov-blocks")} help={__("Such as: 2 min 30 s", "afrigov-blocks")} value={length} onChange={set("length")} __nextHasNoMarginBottom />
     </>
   );

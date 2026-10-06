@@ -91,7 +91,7 @@ if ( $afrigov_image ) {
 				<div class="ag-button-group ag-hero__actions"><?php echo $afrigov_buttons; // phpcs:ignore WordPress.Security.EscapeOutput -- escaped above ?></div>
 			<?php endif; ?>
 			<?php if ( ! empty( $attributes['note'] ) ) : ?>
-				<p class="ag-mb-0"><?php echo wp_kses( $attributes['note'], array( 'a' => array( 'href' => true ), 'strong' => array() ) ); ?></p>
+				<p class="ag-mb-0"><?php echo wp_kses( $attributes['note'], array( 'a' => array( 'href' => true ), 'strong' => array(), 'br' => array() ) ); ?></p>
 			<?php endif; ?>
 		</div>
 		<?php if ( $afrigov_side ) : ?>

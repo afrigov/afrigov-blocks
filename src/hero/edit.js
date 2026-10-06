@@ -78,7 +78,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
         value={note}
         allowedFormats={["core/link", "core/bold"]}
         onChange={set("note")}
-        placeholder={__("A line under the buttons (optional), such as: Moving house? Transfer your connection.", "afrigov-blocks")}
+        placeholder={__("A line under the buttons (optional), such as: Moving house? Transfer your connection. Shift and Enter starts a second line.", "afrigov-blocks")}
       />
     </>
   );

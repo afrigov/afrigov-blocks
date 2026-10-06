@@ -8,7 +8,7 @@
   "name": "afrigov/download",
   "title": "Document",
   "icon": "media-document",
-  "description": "One document from the media library.",
+  "description": "One document: from the media library, or an address elsewhere with its type and size.",
   "parent": [
     "afrigov/downloads"
   ],
@@ -25,6 +25,18 @@
       "default": ""
     },
     "note": {
+      "type": "string",
+      "default": ""
+    },
+    "url": {
+      "type": "string",
+      "default": ""
+    },
+    "fileType": {
+      "type": "string",
+      "default": ""
+    },
+    "fileSize": {
       "type": "string",
       "default": ""
     }

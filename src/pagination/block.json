@@ -5,27 +5,34 @@
   "textdomain": "afrigov-blocks",
   "editorScript": "file:./index.js",
   "render": "file:./render.php",
-  "name": "afrigov/key-figure",
-  "title": "Key figure",
-  "icon": "chart-bar",
-  "description": "One number and what it counts.",
-  "parent": [
-    "afrigov/key-figures"
+  "name": "afrigov/pagination",
+  "title": "Pagination",
+  "icon": "controls-forward",
+  "description": "Links to the previous and next page of a long list, such as: Older news.",
+  "keywords": [
+    "next",
+    "previous",
+    "older",
+    "newer",
+    "pages"
   ],
   "supports": {
-    "html": false,
-    "reusable": false
+    "html": false
   },
   "attributes": {
-    "value": {
+    "prevLabel": {
       "type": "string",
       "default": ""
     },
-    "label": {
+    "prevUrl": {
       "type": "string",
       "default": ""
     },
-    "url": {
+    "nextLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "nextUrl": {
       "type": "string",
       "default": ""
     }

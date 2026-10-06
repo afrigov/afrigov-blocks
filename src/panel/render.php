@@ -15,8 +15,9 @@ if ( '' === $afrigov_title ) {
 $afrigov_body = trim( wp_strip_all_tags( $attributes['body'] ?? '' ) );
 $afrigov_ref  = trim( wp_strip_all_tags( $attributes['reference'] ?? '' ) );
 ?>
-<div <?php echo get_block_wrapper_attributes( array( 'class' => 'ag-panel' ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>>
-	<h2 class="ag-panel__title"><?php echo esc_html( $afrigov_title ); ?></h2>
+<div <?php echo get_block_wrapper_attributes( array( 'class' => 'ag-panel' . ( ! empty( $attributes['neutral'] ) ? ' ag-panel--neutral' : '' ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>>
+	<?php $afrigov_tag = empty( $attributes['isPageTitle'] ) ? 'h2' : 'h1'; ?>
+	<<?php echo esc_html( $afrigov_tag ); ?> class="ag-panel__title"><?php echo esc_html( $afrigov_title ); ?></<?php echo esc_html( $afrigov_tag ); ?>>
 	<?php if ( $afrigov_body || $afrigov_ref ) : ?>
 		<p class="ag-panel__body"><?php echo esc_html( $afrigov_body ); ?><?php if ( $afrigov_ref ) : ?> <span class="ag-panel__ref"><?php echo esc_html( $afrigov_ref ); ?></span><?php endif; ?></p>
 	<?php endif; ?>

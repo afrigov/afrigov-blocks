@@ -213,5 +213,9 @@ function afrigov_blocks_video_embed( $url ) {
 	if ( preg_match( '~vimeo\.com/(?:video/)?(\d+)~', $url, $m ) ) {
 		return 'https://player.vimeo.com/video/' . $m[1] . '?dnt=1';
 	}
+	// A video file, such as one in the media library: the browser's own player shows it.
+	if ( preg_match( '~^https?://\S+\.(mp4|webm|m4v)(\?\S*)?$~i', $url ) ) {
+		return $url;
+	}
 	return '';
 }

@@ -5,27 +5,31 @@
   "textdomain": "afrigov-blocks",
   "editorScript": "file:./index.js",
   "render": "file:./render.php",
-  "name": "afrigov/key-figure",
-  "title": "Key figure",
-  "icon": "chart-bar",
-  "description": "One number and what it counts.",
-  "parent": [
-    "afrigov/key-figures"
+  "name": "afrigov/page-title",
+  "title": "Page title",
+  "icon": "heading",
+  "description": "The page's title with a small line above it, such as Press release or Program, and a sentence under it. Used instead of the theme's own title.",
+  "keywords": [
+    "title",
+    "heading",
+    "kicker",
+    "h1"
   ],
   "supports": {
     "html": false,
+    "multiple": false,
     "reusable": false
   },
   "attributes": {
-    "value": {
+    "caption": {
       "type": "string",
       "default": ""
     },
-    "label": {
+    "title": {
       "type": "string",
       "default": ""
     },
-    "url": {
+    "lead": {
       "type": "string",
       "default": ""
     }

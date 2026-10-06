@@ -5,37 +5,39 @@
   "textdomain": "afrigov-blocks",
   "editorScript": "file:./index.js",
   "render": "file:./render.php",
-  "name": "afrigov/panel",
-  "title": "Panel",
-  "icon": "yes-alt",
-  "description": "A done message in a coloured box: the end of a form, with a reference number.",
+  "name": "afrigov/figure",
+  "title": "Picture",
+  "icon": "format-image",
+  "description": "One picture with a caption, cropped to a fixed shape so a page of pictures lines up.",
   "keywords": [
-    "confirmation",
-    "done",
-    "success",
-    "reference"
+    "image",
+    "photo",
+    "figure",
+    "caption"
   ],
   "supports": {
     "html": false
   },
   "attributes": {
-    "title": {
+    "image": {
+      "type": "object"
+    },
+    "caption": {
       "type": "string",
       "default": ""
     },
-    "body": {
+    "ratio": {
       "type": "string",
+      "enum": [
+        "",
+        "16-9",
+        "3-2",
+        "4-3",
+        "1-1"
+      ],
       "default": ""
     },
-    "reference": {
-      "type": "string",
-      "default": ""
-    },
-    "neutral": {
-      "type": "boolean",
-      "default": false
-    },
-    "isPageTitle": {
+    "narrow": {
       "type": "boolean",
       "default": false
     }

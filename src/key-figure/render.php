@@ -15,6 +15,12 @@ if ( '' === $afrigov_value || '' === $afrigov_label ) {
 }
 ?>
 <div class="ag-stats__item">
-	<dt class="ag-stats__label"><?php echo esc_html( $afrigov_label ); ?></dt>
+	<dt class="ag-stats__label">
+		<?php if ( ! empty( $attributes['url'] ) ) : ?>
+			<a href="<?php echo esc_url( $attributes['url'] ); ?>"><?php echo esc_html( $afrigov_label ); ?></a>
+		<?php else : ?>
+			<?php echo esc_html( $afrigov_label ); ?>
+		<?php endif; ?>
+	</dt>
 	<dd class="ag-stats__value"><?php echo esc_html( $afrigov_value ); ?></dd>
 </div>

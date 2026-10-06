@@ -21,6 +21,10 @@
     "asAt": {
       "type": "string",
       "default": ""
+    },
+    "hiddenHeading": {
+      "type": "string",
+      "default": ""
     }
   }
 }

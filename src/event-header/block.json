@@ -5,29 +5,40 @@
   "textdomain": "afrigov-blocks",
   "editorScript": "file:./index.js",
   "render": "file:./render.php",
-  "name": "afrigov/key-figure",
-  "title": "Key figure",
-  "icon": "chart-bar",
-  "description": "One number and what it counts.",
-  "parent": [
-    "afrigov/key-figures"
+  "name": "afrigov/event-header",
+  "title": "Event header",
+  "icon": "calendar-alt",
+  "description": "The top of an event's page: the large date block, the title and a sentence about it.",
+  "keywords": [
+    "event",
+    "date",
+    "title"
   ],
   "supports": {
     "html": false,
+    "multiple": false,
     "reusable": false
   },
   "attributes": {
-    "value": {
+    "title": {
       "type": "string",
       "default": ""
     },
-    "label": {
+    "lead": {
       "type": "string",
       "default": ""
     },
-    "url": {
+    "date": {
       "type": "string",
       "default": ""
+    },
+    "time": {
+      "type": "string",
+      "default": ""
+    },
+    "tbc": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
