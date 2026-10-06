@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       afrigov blocks
- * Plugin URI:        https://github.com/omoyolab/afrigov-blocks
+ * Plugin URI:        https://github.com/afrigov/afrigov-blocks
  * Description:       afrigov's components as blocks: each one a fixed shape you fill in on the page, with an Add button for repeating parts. Pages stay accessible and light.
  * Version:           0.1.0
  * Requires at least: 6.6
