@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "afrigov/event-list",
+  "title": "Events list",
+  "category": "afrigov",
+  "icon": "calendar-alt",
+  "description": "Events from the Events section: the next few on any page, or all of them in pages on the events page.",
+  "keywords": [
+    "events",
+    "calendar",
+    "upcoming",
+    "past"
+  ],
+  "textdomain": "afrigov-blocks",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "which": {
+      "type": "string",
+      "enum": [
+        "upcoming",
+        "past",
+        "all"
+      ],
+      "default": "upcoming"
+    },
+    "count": {
+      "type": "number",
+      "default": 3
+    },
+    "paginate": {
+      "type": "boolean",
+      "default": false
+    },
+    "allLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "allUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "headingLevel": {
+      "type": "number",
+      "default": 3
+    }
+  },
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php"
+}

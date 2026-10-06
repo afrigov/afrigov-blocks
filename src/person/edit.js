@@ -3,6 +3,7 @@ import { InspectorControls, RichText, useBlockProps } from "@wordpress/block-edi
 import { PanelBody } from "@wordpress/components";
 import { LinkField } from "../shared/link-field";
 import { MediaField } from "../shared/media-field";
+import { PictureSlot } from "../shared/picture-slot";
 
 const BLANK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23dfe6ec'/%3E%3C/svg%3E";
 
@@ -20,7 +21,7 @@ export default function Edit({ attributes, setAttributes, context, isSelected })
         </PanelBody>
       </InspectorControls>
       <li {...blockProps}>
-        <img className="ag-person__photo" src={photo?.url || BLANK} alt="" width="320" height="320" />
+        <PictureSlot image={photo} isSelected={isSelected} onChange={(value) => setAttributes({ photo: value })} label={__("Portrait", "afrigov-blocks")} className="ag-person__photo" render={(img) => <img className="ag-person__photo" src={img.url} alt="" width="320" height="320" />} />
         <div>
           <RichText tagName={context["afrigov/personHeading"] === 2 ? "h2" : "h3"} className="ag-person__name" value={name} allowedFormats={[]} onChange={(value) => setAttributes({ name: value })} placeholder={__("Name, such as: Dr Amina Bello", "afrigov-blocks")} />
           <RichText tagName="p" className="ag-person__role" value={role} allowedFormats={[]} onChange={(value) => setAttributes({ role: value })} placeholder={__("Role", "afrigov-blocks")} />

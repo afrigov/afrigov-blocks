@@ -3,6 +3,7 @@ import { InspectorControls, RichText, useBlockProps } from "@wordpress/block-edi
 import { PanelBody, TextControl } from "@wordpress/components";
 import { LinkField, NoLink } from "../shared/link-field";
 import { MediaField } from "../shared/media-field";
+import { PictureSlot } from "../shared/picture-slot";
 
 const BLANK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Crect width='16' height='9' fill='%23c7d6e3'/%3E%3C/svg%3E";
 
@@ -21,7 +22,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
       </InspectorControls>
       <li {...useBlockProps({ className: "ag-card ag-card--video" })}>
         <div className="ag-card__image">
-          <img src={poster?.url || BLANK} alt="" />
+          <PictureSlot image={poster} isSelected={isSelected} onChange={set("poster")} label={__("Choose a still", "afrigov-blocks")} render={(img) => <img src={img.url} alt="" />} />
           {duration && <span className="ag-card__duration">{duration}</span>}
         </div>
         <RichText tagName="h3" className="ag-card__title" value={title} allowedFormats={[]} onChange={set("title")} placeholder={__("Video title", "afrigov-blocks")} />

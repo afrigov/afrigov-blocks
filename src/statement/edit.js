@@ -3,6 +3,7 @@ import { InspectorControls, RichText, useBlockProps, useInnerBlocksProps } from 
 import { PanelBody } from "@wordpress/components";
 import { LinkField } from "../shared/link-field";
 import { MediaField } from "../shared/media-field";
+import { PictureSlot } from "../shared/picture-slot";
 
 const BLANK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23dfe6ec'/%3E%3C/svg%3E";
 
@@ -21,7 +22,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
       </InspectorControls>
       <section {...blockProps}>
         <figure className="ag-figure ag-statement__media">
-          <img className="ag-figure__image" src={photo?.url || BLANK} alt="" width="320" height="320" />
+          <PictureSlot image={photo} isSelected={isSelected} onChange={set("photo")} label={__("Choose a portrait", "afrigov-blocks")} render={(img) => <img className="ag-figure__image" src={img.url} alt="" width="320" height="320" />} />
         </figure>
         <div className="ag-statement__body">
           <RichText tagName="h2" className="ag-statement__title" value={title} allowedFormats={[]} onChange={set("title")} placeholder={__("Title, such as: A message from the Director General", "afrigov-blocks")} />

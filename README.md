@@ -2,7 +2,7 @@
 
 afrigov's components as WordPress blocks. Each block is a fixed shape you fill in on the page: you type the title onto the hero, and the service cards have an Add card button. Nothing can be dropped inside a block that does not belong there, and the editor looks like the published page.
 
-Status: version 0.1.0, 24 blocks, in development. It is not in the WordPress plugin directory yet.
+Status: version 0.1.0, in development. It is not in the WordPress plugin directory yet.
 
 ## The blocks
 
@@ -15,11 +15,12 @@ Each block is listed under **afrigov** when you press **+** in the editor. Repea
 | Steps | Numbered steps, with **Add step** | Heading level |
 | Key figures | Figures, with **Add figure**, and the date they are true for | |
 | People | Name and role, with **Add person** | Layout: as many as fit, 2 or 3 centred, 4 or 6 a row, rows |
-| Events | Title, when and where, with **Add event** | Date and time, or to be confirmed. Marked past by itself |
+| Events | Title, when and where, with **Add event**. For a few events typed on one page | Date and time, or to be confirmed. Marked past by itself |
+| Events list | Nothing: it shows events from **Events** in the admin menu | Upcoming, past or all. How many. Pages of them, for the events page |
 | Alert | Title and what to do | Kind: information, success, warning, problem |
 | Downloads | Documents, with **Add document** | The file; its type and size are worked out |
 | Statement | A leader's message, name, role, link | Portrait |
-| Latest news | Nothing: it shows the newest posts | How many, which category, a line from each |
+| Latest news | Nothing: it shows the newest posts | How many, which category, a line from each, an All news link |
 | Band | Anything: a section across the page | Colour: pale tint, main colour, dark, accent |
 | Feature | Title, a sentence, points with **Add point**, a link | Picture first or after the text |
 | Accordion | Questions and answers, with **Add section** | |
@@ -37,6 +38,8 @@ Each block is listed under **afrigov** when you press **+** in the editor. Repea
 
 Links sit just under what they belong to while a block is selected. Something with words but no link says so in the editor.
 
+A block with a picture shows a **Choose a picture** button where the picture goes. With a picture in, **Change picture** sits on it while the block is selected.
+
 ## Using variants
 
 Click a block. The toolbar above it shows its main choice and what is chosen now, such as **Layout: Over a photo** or **Style: Tinted**. Click it to pick another. The page changes at once.
@@ -50,6 +53,14 @@ Every other choice is in the settings sidebar, opened with the gear at the top r
 On pages, the + menu holds these blocks and the basic writing blocks: paragraph, heading, list, quote, image, table, details, separator, buttons, shortcode, and YouTube and Vimeo embeds. Groups, columns and covers are left out, since they break the look. Posts keep every block.
 
 A new page offers three starter pages: Service, About and Home.
+
+## News and events
+
+News is ordinary WordPress posts. Set a page as the posts page under Settings, Reading, and the theme lists the posts there, in pages. The page's excerpt is the sentence under its title. Latest news shows the newest few anywhere else.
+
+Events are their own kind of post: **Events** in the admin menu. Each has a **When and where** panel beside the editor: the date and time, or to be confirmed, the place in words, and a link for an event with nothing written about it on the site. An event is past the day after its date, and moves to the past list by itself. Its page is at /events/its-name/.
+
+Put an Events list block on a page called Events, set to all and in pages, and use one set to upcoming, with a small number, on the home page.
 
 ## How it is built
 

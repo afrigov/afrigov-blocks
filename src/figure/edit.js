@@ -3,6 +3,7 @@ import { InspectorControls, RichText, useBlockProps } from "@wordpress/block-edi
 import { PanelBody, ToggleControl } from "@wordpress/components";
 import { MediaField } from "../shared/media-field";
 import { VariantMenu } from "../shared/variant-menu";
+import { PictureSlot } from "../shared/picture-slot";
 
 const SHAPES = [
   { value: "", label: __("As it is", "afrigov-blocks") },
@@ -12,7 +13,7 @@ const SHAPES = [
   { value: "1-1", label: __("Square", "afrigov-blocks") },
 ];
 
-export default function Edit({ attributes, setAttributes }) {
+export default function Edit({ attributes, setAttributes, isSelected }) {
   const { image, caption, ratio, narrow } = attributes;
   const blockProps = useBlockProps({ className: ["ag-figure", ratio && `ag-figure--${ratio}`].filter(Boolean).join(" "), style: narrow ? { maxWidth: "48rem" } : undefined });
   return (
@@ -25,7 +26,7 @@ export default function Edit({ attributes, setAttributes }) {
         </PanelBody>
       </InspectorControls>
       <figure {...blockProps}>
-        {image?.url ? <img className="ag-figure__image" src={image.url} alt="" /> : <div className="afrigov-blocks-empty-picture">{__("Choose a picture in the sidebar", "afrigov-blocks")}</div>}
+        <PictureSlot image={image} isSelected={isSelected} onChange={(value) => setAttributes({ image: value })} render={(img) => <img className="ag-figure__image" src={img.url} alt="" />} />
         <RichText tagName="figcaption" className="ag-figure__caption" value={caption} allowedFormats={[]} onChange={(value) => setAttributes({ caption: value })} placeholder={__("What it shows, and who took it.", "afrigov-blocks")} />
       </figure>
     </>

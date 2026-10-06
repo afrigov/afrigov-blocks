@@ -2,6 +2,7 @@ import { __ } from "@wordpress/i18n";
 import { InspectorControls, RichText, useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor";
 import { PanelBody, TextControl } from "@wordpress/components";
 import { MediaField } from "../shared/media-field";
+import { PictureSlot } from "../shared/picture-slot";
 
 const BLANK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Crect width='16' height='9' fill='%23c7d6e3'/%3E%3C/svg%3E";
 
@@ -30,7 +31,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
       <div {...useBlockProps()}>
         <figure className="ag-video">
           <span className="ag-video__poster">
-            <img src={poster?.url || BLANK} alt="" />
+            <PictureSlot image={poster} isSelected={isSelected} onChange={set("poster")} label={__("Choose a still from the video", "afrigov-blocks")} render={(img) => <img src={img.url} alt="" />} />
             <span className="ag-video__play" aria-hidden="true" />
             <span className="ag-video__label">
               {__("Play video:", "afrigov-blocks")}{" "}

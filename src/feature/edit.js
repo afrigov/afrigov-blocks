@@ -4,6 +4,7 @@ import { Button, PanelBody, ToggleControl } from "@wordpress/components";
 import { LinkField, NoLink } from "../shared/link-field";
 import { MediaField } from "../shared/media-field";
 import { VariantMenu } from "../shared/variant-menu";
+import { PictureSlot } from "../shared/picture-slot";
 
 export default function Edit({ attributes, setAttributes, isSelected }) {
   const { image, title, text, points, linkLabel, linkUrl, reverse } = attributes;
@@ -27,7 +28,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
       </InspectorControls>
       <div {...blockProps}>
         <figure className="ag-figure ag-feature__media">
-          {image?.url ? <img className="ag-figure__image" src={image.url} alt="" /> : <div className="afrigov-blocks-empty-picture">{__("Choose a picture in the sidebar", "afrigov-blocks")}</div>}
+          <PictureSlot image={image} isSelected={isSelected} onChange={set("image")} render={(img) => <img className="ag-figure__image" src={img.url} alt="" />} />
         </figure>
         <div className="ag-feature__body">
           <RichText tagName="h2" className="ag-feature__title" value={title} allowedFormats={[]} onChange={set("title")} placeholder={__("Title", "afrigov-blocks")} />

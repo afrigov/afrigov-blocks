@@ -3,6 +3,7 @@ import { InspectorControls, RichText, useBlockProps } from "@wordpress/block-edi
 import { PanelBody, SelectControl } from "@wordpress/components";
 import { LinkField, NoLink } from "../shared/link-field";
 import { MediaField } from "../shared/media-field";
+import { PictureSlot } from "../shared/picture-slot";
 
 const EDGE = { accent: "ag-card--accent", flag: "ag-card--flag", tinted: "ag-card--tinted", plain: "ag-card--plain" };
 
@@ -14,13 +15,12 @@ export default function Edit({ attributes, setAttributes, context, isSelected })
   const blockProps = useBlockProps({ className: ["ag-card", EDGE[context["afrigov/cardEdge"]], horizontal && "ag-card--horizontal"].filter(Boolean).join(" ") });
   const level = context["afrigov/cardHeading"] === 2 ? "h2" : "h3";
   const link = <LinkField label={__("Card links to", "afrigov-blocks")} value={url} onChange={set("url")} />;
-  const picture = image?.url ? (
-    imageKind === "logo" ? (
-      <div className="ag-card__logo"><img src={image.url} alt="" /></div>
-    ) : (
-      <div className="ag-card__image"><img src={image.url} alt="" /></div>
-    )
-  ) : null;
+  const picture =
+    image?.url || isSelected ? (
+      <div className={imageKind === "logo" ? "ag-card__logo" : "ag-card__image"}>
+        <PictureSlot image={image} isSelected={isSelected} onChange={set("image")} label={imageKind === "logo" ? __("Add a logo (optional)", "afrigov-blocks") : __("Add a photo (optional)", "afrigov-blocks")} render={(img) => <img src={img.url} alt="" />} />
+      </div>
+    ) : null;
   const words = (
     <>
       <RichText tagName={level} className="ag-card__title" value={title} allowedFormats={[]} onChange={set("title")} placeholder={__("Card title", "afrigov-blocks")} />

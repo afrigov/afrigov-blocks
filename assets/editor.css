@@ -101,3 +101,38 @@
   background: #fff;
   color: #1b1b1b;
 }
+
+/* A picture on the canvas: the empty space is a button, and a chosen picture has Change on it. */
+button.afrigov-blocks-empty-picture {
+  width: 100%;
+  font: inherit;
+  cursor: pointer;
+}
+
+button.afrigov-blocks-empty-picture:hover,
+button.afrigov-blocks-empty-picture:focus {
+  border-color: #3c4b5a;
+  background: #e6edf3;
+}
+
+.afrigov-blocks-picture {
+  position: relative;
+  display: block;
+}
+
+.afrigov-blocks-picture__change {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2;
+}
+
+/* The event's "When and where" panel: room between the fields. */
+.afrigov-blocks-event-fields {
+  display: grid;
+  gap: 20px;
+}
+.afrigov-blocks-event-fields .components-base-control,
+.afrigov-blocks-event-fields .components-base-control__field {
+  margin-bottom: 0;
+}

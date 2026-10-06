@@ -19,6 +19,8 @@ defined( 'ABSPATH' ) || exit;
 
 define( 'AFRIGOV_BLOCKS_VERSION', '0.1.0' );
 
+require __DIR__ . '/inc/events.php';
+
 /**
  * The blocks: every folder in build/ with a block.json. Each has the editor script and render.php,
  * which builds the HTML when the page is shown. Nothing is saved in the post but the block's fields,

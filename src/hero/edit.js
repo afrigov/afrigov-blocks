@@ -5,6 +5,7 @@ import { LayoutPicker, PICTURES } from "../shared/layout-picker";
 import { LinkField, NoLink } from "../shared/link-field";
 import { MediaField } from "../shared/media-field";
 import { VariantMenu } from "../shared/variant-menu";
+import { PictureSlot } from "../shared/picture-slot";
 
 const LAYOUTS = [
   { value: "text", label: __("Text", "afrigov-blocks"), picture: PICTURES.text },
@@ -83,7 +84,6 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
     </>
   );
 
-  const picture = image?.url ? <img className={layout === "cover" ? "ag-hero__cover" : "ag-figure__image"} src={image.url} alt="" /> : null;
 
   return (
     <>
@@ -116,11 +116,15 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
       </InspectorControls>
 
       <div {...blockProps}>
-        {layout === "cover" && (picture || <div className="ag-hero__cover afrigov-blocks-empty-picture">{__("Choose a photo in the sidebar", "afrigov-blocks")}</div>)}
+        {layout === "cover" && (
+          <PictureSlot image={image} isSelected={isSelected} onChange={set("image")} label={__("Choose the photo behind the text", "afrigov-blocks")} className="ag-hero__cover" render={(img) => <img className="ag-hero__cover" src={img.url} alt="" />} />
+        )}
         <div className="ag-container ag-hero__inner">
           <div className={layout === "cover" ? "ag-hero__panel" : undefined}>{text}</div>
           {(layout === "image" || layout === "image-first") && (
-            <figure className="ag-figure ag-hero__media">{picture || <div className="afrigov-blocks-empty-picture">{__("Choose a picture in the sidebar", "afrigov-blocks")}</div>}</figure>
+            <figure className="ag-figure ag-hero__media">
+              <PictureSlot image={image} isSelected={isSelected} onChange={set("image")} render={(img) => <img className="ag-figure__image" src={img.url} alt="" />} />
+            </figure>
           )}
         </div>
       </div>
