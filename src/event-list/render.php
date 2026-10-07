@@ -26,7 +26,7 @@ $afrigov_page  = 1;
 $afrigov_pages = 1;
 if ( ! empty( $attributes['paginate'] ) ) {
 	$afrigov_pages = (int) ceil( count( $afrigov_events ) / $afrigov_count );
-	$afrigov_page  = min( $afrigov_pages, max( 1, (int) ( $_GET['events-page'] ?? 1 ) ) ); // phpcs:ignore WordPress.Security.NonceVerification -- a page number
+	$afrigov_page  = min( $afrigov_pages, max( 1, absint( wp_unslash( $_GET['events-page'] ?? 1 ) ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- a page number to show, nothing is changed
 }
 $afrigov_shown = array_slice( $afrigov_events, ( $afrigov_page - 1 ) * $afrigov_count, $afrigov_count );
 $afrigov_label = trim( wp_strip_all_tags( $attributes['allLabel'] ?? '' ) );

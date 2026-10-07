@@ -1,0 +1,12 @@
+# Left out of the WordPress.org zip: what only developers need.
+.git
+.github
+.gitignore
+.distignore
+.wordpress-org
+node_modules
+src
+scripts
+package.json
+package-lock.json
+README.md

@@ -2,7 +2,7 @@
 
 afrigov's components as WordPress blocks. Each block is a fixed shape you fill in on the page: you type the title onto the hero, and the service cards have an Add card button. Nothing can be dropped inside a block that does not belong there, and the editor looks like the published page.
 
-Status: version 0.1.0, in development. It is not in the WordPress plugin directory yet.
+Version 0.1.0, being prepared for the WordPress plugin directory. `readme.txt` is the directory listing, and `.wordpress-org/` holds its icon, banner and screenshots.
 
 ## The blocks
 
