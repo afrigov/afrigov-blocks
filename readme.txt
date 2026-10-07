@@ -22,6 +22,7 @@ Pages built with these blocks pass WCAG 2.1 AA checks and stay light enough for 
 * **Service cards**, with a coloured edge, a picture or a logo.
 * **Steps**, **key figures**, **people** and a leader's **statement**.
 * **Events list**, from the events you add, upcoming, past or all, in pages.
+* **Event details**: when, where and who it is for, with the event's flyer beside them.
 * **Latest news**, from your posts.
 * **Alert**, **inset text**, **accordion**, **summary list** and **panel**.
 * **Downloads**, with the file type and size worked out.
@@ -39,7 +40,9 @@ Pages built with these blocks pass WCAG 2.1 AA checks and stay light enough for 
 
 = Events =
 
-Events have their own place in the admin menu. Each has a When and where panel: a date and time, or to be confirmed, the place in words, and an optional link. An event moves to the past list by itself the day after its date. Put an Events list block on a page called Events, set to show all events in pages, and a short one on the home page.
+Events have their own place in the admin menu. Each has a When and where panel: a date and time, or to be confirmed, the place in words, and an optional link. An event moves to the past list by itself the day after its date.
+
+A new event starts with an Event details block, with When and Where rows to fill in. Its flyer, set beside the editor or by clicking its place on the page, shows beside the details and opens full size. Write everything on the flyer in the rows as well, so it can be read without the picture. Put an Events list block on a page called Events, set to show all events in pages, and a short one on the home page.
 
 = Pages stay tidy =
 

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "category": "afrigov",
+  "textdomain": "afrigov-blocks",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "name": "afrigov/event-detail",
+  "title": "Event details",
+  "icon": "calendar-alt",
+  "description": "An event's facts in pairs, such as when, where and who it is for, with its flyer beside them.",
+  "keywords": [
+    "event",
+    "flyer",
+    "details",
+    "when",
+    "where"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "flyer": {
+      "type": "object"
+    },
+    "caption": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

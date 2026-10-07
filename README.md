@@ -16,6 +16,7 @@ Each block is listed under **afrigov** when you press **+** in the editor. Repea
 | Key figures | Figures, with **Add figure**, and the date they are true for | |
 | People | Name and role, with **Add person** | Layout: as many as fit, 2 or 3 centred, 4 or 6 a row, rows |
 | Events | Title, when and where, with **Add event**. For a few events typed on one page | Date and time, or to be confirmed. Marked past by itself |
+| Event details | Rows such as When, Where and Cost, with **Add row**, and the flyer beside them | On an event, the flyer is its featured image, labelled Flyer |
 | Events list | Nothing: it shows events from **Events** in the admin menu | Upcoming, past or all. How many. Pages of them, for the events page |
 | Alert | Title and what to do | Kind: information, success, warning, problem |
 | Downloads | Documents, with **Add document** | The file; its type and size are worked out |
@@ -58,7 +59,7 @@ A new page offers three starter pages: Service, About and Home.
 
 News is ordinary WordPress posts. Set a page as the posts page under Settings, Reading, and the theme lists the posts there, in pages. The page's excerpt is the sentence under its title. Latest news shows the newest few anywhere else.
 
-Events are their own kind of post: **Events** in the admin menu. Each has a **When and where** panel beside the editor: the date and time, or to be confirmed, the place in words, and a link for an event with nothing written about it on the site. An event is past the day after its date, and moves to the past list by itself. Its page is at /events/its-name/.
+Events are their own kind of post: **Events** in the admin menu. A new event starts with the Event details block, and its featured image is labelled **Flyer**. Each has a **When and where** panel beside the editor: the date and time, or to be confirmed, the place in words, and a link for an event with nothing written about it on the site. An event is past the day after its date, and moves to the past list by itself. Its page is at /events/its-name/.
 
 Put an Events list block on a page called Events, set to all and in pages, and use one set to upcoming, with a small number, on the home page.
 

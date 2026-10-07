@@ -10,7 +10,8 @@
   "icon": "minus",
   "description": "One name and its value.",
   "parent": [
-    "afrigov/summary"
+    "afrigov/summary",
+    "afrigov/event-detail"
   ],
   "supports": {
     "html": false,

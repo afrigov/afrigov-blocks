@@ -24,6 +24,23 @@ function afrigov_blocks_events_register() {
 				'add_new_item'  => __( 'Add event', 'afrigov-blocks' ),
 				'edit_item'     => __( 'Edit event', 'afrigov-blocks' ),
 				'all_items'     => __( 'All events', 'afrigov-blocks' ),
+				// An event's featured image is its flyer, shown beside the Event details block.
+				'featured_image'        => __( 'Flyer', 'afrigov-blocks' ),
+				'set_featured_image'    => __( 'Set flyer', 'afrigov-blocks' ),
+				'remove_featured_image' => __( 'Remove flyer', 'afrigov-blocks' ),
+				'use_featured_image'    => __( 'Use as flyer', 'afrigov-blocks' ),
+			),
+			// A new event starts with its details to fill in.
+			'template'     => array(
+				array(
+					'afrigov/event-detail',
+					array(),
+					array(
+						array( 'afrigov/summary-row', array( 'key' => __( 'When', 'afrigov-blocks' ) ) ),
+						array( 'afrigov/summary-row', array( 'key' => __( 'Where', 'afrigov-blocks' ) ) ),
+					),
+				),
+				array( 'core/paragraph', array( 'placeholder' => __( 'What happens there, who it is for, and how to take part.', 'afrigov-blocks' ) ) ),
 			),
 			'public'       => true,
 			'has_archive'  => false, // The events page is an ordinary page with an Events list block on it.
