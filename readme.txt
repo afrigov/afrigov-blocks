@@ -1,5 +1,5 @@
 === afrigov blocks ===
-Contributors: WPORG_USERNAME
+Contributors: abimbolaomoyola
 Tags: accessibility, government, blocks, design system, africa
 Requires at least: 6.6
 Tested up to: 7.1
