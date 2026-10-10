@@ -81,6 +81,10 @@ cd ../afrigovPress && npm start   # WordPress at http://localhost:8888, admin / 
 
 Open Pages, Add New, press the + at the top left, and look under afrigov. The page "All blocks" uses every one.
 
+## How it is made
+
+Built with AI assistance (Claude). Every change is reviewed and decided by the maintainer before it ships.
+
 ## Licence
 
 GPL-2.0-or-later, as WordPress requires of plugins in its directory.
